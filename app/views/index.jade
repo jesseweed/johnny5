@@ -1,0 +1,46 @@
+extends layouts/default
+
+block content
+
+  section.form-group
+    label(for="") Label for input with no value or placeholder
+    input(type="text" placeholder="input with placeholder text")
+    span.status
+
+  section.form-group
+    label(for="") Label for input with no value or placeholder
+    input(type="text" value="input with default value")
+    span.status
+
+  section.form-group
+    label(for="") Label for input with no value or placeholder
+    input(type="text")
+    span.status
+
+
+  section.form-group.good
+    label(for="") Good
+    input(type="text" value="Something good has happened")
+    span.status
+
+
+  section.form-group.info
+    label(for="") Info
+    input(type="text" value="Well this sorta interesting")
+    span.status
+
+  section.form-group.warning
+    label(for="") Warning
+    input(type="text" value="This could be dangerous")
+    span.status
+
+
+  section.form-group.bad
+    label(for="") Bad
+    input(type="text", value="The bad touch.")
+    span.status
+
+  section.form-group.disabled
+    label(for="") Disabled
+    input(type="text" value="Oh noes! This is disabled!", disabled)
+    span.status

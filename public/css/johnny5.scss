@@ -1,0 +1,333 @@
+@import 'lib/normalize';
+@import "modules/base";
+@import "modules/icons";
+/* @import 'config'; */
+
+
+/*
+
+- - - JOHNNY FIVE CONFIGURATION SETTINGS - - -
+
+Note: Assume it's safe to use any valid css value for all settings unless otherwise noted.
+
+TO-DO:
+* Labels currently only align top or left
+* Find a way to not require .form-group wrapper to use icons
+
+*/
+
+/* BASE */
+
+$j5-font-size-input: 1rem;
+$j5-font-size-label: 1rem;
+
+
+/* COLOR */
+
+  /* base */
+  $j5-color-text: #333;
+  $j5-color-focus: #b02fc4;
+  $j5-color-placeholder: #c4c4c4;
+  $j5-color-label: #333;
+
+  /* status */
+  $j5-status-bad: #c00;
+  $j5-status-info: #0983d5;
+  $j5-status-good: #7ecd00;
+  $j5-status-warning: #cd8200;
+  $j5-status-disabled: #dcdcdc;
+  $j5-status-disabled-bg: $j5-status-disabled;
+  $j5-status-disabled-text: lighten( invert($j5-status-disabled-bg), 50% );
+
+
+/* INPUT */
+
+  /* base */
+  $j5-input-width: 90%;
+  $j5-input-padding: $j5-font-size-input;
+  $j5-input-top: 0px;
+  $j5-input-bottom: 10px;
+
+
+  /* textarea */
+  $j5-textarea-height: 200px;
+  $j5-textarea-resizeable: true;
+  $j5-textarea-width: $j5-input-width;
+  $j5-textarea-top: $j5-input-top;
+  $j5-textarea-bottom: $j5-input-bottom;
+  $j5-textarea-padding: $j5-input-padding;
+
+  /* border */
+  $j5-input-border-color: $j5-color-text;
+  $j5-input-border-color-focus: $j5-color-focus;
+  $j5-input-border-color-disabled: background($j5-status-disabled, 10%);
+  $j5-input-border-style: solid;
+  $j5-input-border-size: 2px;
+
+
+/* LABEL */
+$j5-label-position: top; // [ top | right | left ]
+$j5-label-width: 40%;
+$j5-label-top: 10px;
+$j5-label-bottom: 5px;
+$j5-label-left: 0px;
+$j5-label-weight: bold;
+
+
+
+
+/* ICON */
+
+  /* sizing */
+  $j5-icon-size: $j5-font-size-input * 1.2;
+  $j5-icon-left: - ($j5-input-padding + $j5-input-padding) * 1.2;
+  $j5-icon-top: 2px;
+
+  /* sources */
+  $j5-icon-good: "\e6fe";
+  $j5-icon-bad: "\e6f5";
+  $j5-icon-disabled: "\e688";
+  $j5-icon-focus: "\e651";
+  $j5-icon-info: "\e6f7";
+  $j5-icon-warning: "\e6f4";
+
+
+/* BUTTON */
+
+
+
+
+
+
+
+.form-group {
+
+  /* INPUT */
+  input, textarea {
+    border: $j5-input-border-style $j5-input-border-size $j5-input-border-color;
+    color: $j5-color-text;
+    display: inline-block;
+    font-size: $j5-font-size-input;
+    margin-bottom: $j5-input-bottom;
+    margin-top: $j5-input-top;
+    padding: $j5-input-padding;
+    width: $j5-input-width;
+    transition: all 0.5s ease;
+
+    &:focus {
+      border-color: $j5-input-border-color-focus !important;
+      color: $j5-color-focus !important;
+
+      label { color: $j5-status-bad; }
+
+      &+ .status:before {
+        content: $j5-icon-focus;
+        color: $j5-color-focus;
+        opacity: 0.5;
+      }
+
+    }
+
+    /* disabled */
+    &:disabled {
+      background-color: $j5-status-disabled-bg;
+      border-color: $j5-input-border-color-disabled;
+      color: $j5-status-disabled-text;
+    }
+
+    &:disabled:hover {
+      cursor: not-allowed;
+    }
+
+
+    @if $j5-label-position == right {
+    } @else if $j5-label-position == left {
+    } @else {
+    }
+  }
+
+
+  /* LABEL */
+  label {
+    color: $j5-color-label;
+    margin-bottom: $j5-label-bottom;
+    margin-top: $j5-label-top;
+    font-weight: $j5-label-weight;
+
+    @if $j5-label-position == right {
+        /* float: right; */
+        display: inline-block;
+        text-align: left;
+        padding-top: $j5-input-padding;
+        margin-left: $j5-input-padding;
+        width: $j5-label-width;
+
+        &:after {
+          content:"\A";
+          white-space:pre;
+        }
+    } @else if $j5-label-position == left {
+        padding-top: $j5-input-padding;
+        margin-right: $j5-input-padding;
+        display: inline-block;
+        width: $j5-label-width;
+        text-align: right;
+    } @else {
+        display: block;
+    }
+  }
+
+
+  /* STATUS */
+
+  &.bad {
+
+    input, textarea {
+      border-color: $j5-status-bad;
+      color: $j5-status-bad;
+    }
+
+    label { color: $j5-status-bad; }
+
+    .status:before {
+      content: $j5-icon-bad;
+      color: $j5-status-bad;
+      opacity: 1;
+    }
+
+  }
+
+
+  &.disabled {
+
+    &:hover {
+      cursor: not-allowed;
+    }
+
+    input, textarea {
+      background-color: $j5-status-disabled-bg;
+      border-color: $j5-input-border-color-disabled;
+      color: $j5-status-disabled-text;
+    }
+
+    label { color: $j5-status-disabled; }
+
+    .status:before {
+      content: $j5-icon-disabled;
+      color: $j5-status-disabled-text;
+      opacity: 1;
+    }
+
+  }
+
+
+
+  // GOOD / SUCCESS
+  &.good {
+
+    input, textarea {
+      border-color: $j5-status-good;
+      color: $j5-status-good;
+    }
+
+    label { color: $j5-status-good; }
+
+    .status:before {
+      content: $j5-icon-good;
+      color: $j5-status-good;
+      opacity: 1;
+    }
+
+  }
+
+
+  // INFO
+  &.info {
+
+    input, textarea {
+      border-color: $j5-status-info;
+      color: $j5-status-info;
+    }
+
+    label { color: $j5-status-info; }
+
+    .status:before {
+      content: $j5-icon-info;
+      color: $j5-status-info;
+      opacity: 1;
+    }
+
+  }
+
+  // WARNING
+  &.warning {
+
+    input, textarea {
+      border-color: $j5-status-warning;
+      color: $j5-status-warning;
+    }
+
+    label { color: $j5-status-warning; }
+
+    .status:before {
+      content: $j5-icon-warning;
+      color: $j5-status-warning;
+      opacity: 1;
+    }
+
+  }
+
+
+  /* ICONS */
+
+  .status {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .status:before {
+    content: "";
+    font-size: $j5-icon-size;
+    margin-left: $j5-icon-left;
+    position: relative;
+    top: $j5-icon-top;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+
+
+}
+
+input, textarea {
+
+  &.bad, &:invalid {
+    border-color: $j5-status-bad;
+    color: $j5-status-bad;
+  }
+
+
+  &.good {
+    border-color: $j5-status-good;
+    color: $j5-status-good;
+  }
+
+  &.info {
+    border-color: $j5-status-info;
+    color: $j5-status-info;
+  }
+
+  &.warning {
+    border-color: $j5-status-warning;
+    color: $j5-status-warning;
+  }
+
+
+}
