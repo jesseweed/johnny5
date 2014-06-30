@@ -3,44 +3,43 @@ extends layouts/default
 block content
 
   section.form-group
-    label(for="") Label for input with no value or placeholder
-    input(type="text" placeholder="input with placeholder text")
+    input(type="text" placeholder="input with placeholder text & no label")
     span.status
 
   section.form-group
-    label(for="") Label for input with no value or placeholder
+    label(for="") Here's an input with a label & a defaul value
     input(type="text" value="input with default value")
     span.status
 
   section.form-group
-    label(for="") Label for input with no value or placeholder
+    label(for="") This input has no value or placeholder
     input(type="text")
     span.status
 
 
   section.form-group.good
-    label(for="") Good
-    input(type="text" value="Something good has happened")
+    label(for="") This section has had a ".good" class applied to it.
+    input(type="text" value="Woo hoo!")
     span.status
 
 
   section.form-group.info
-    label(for="") Info
-    input(type="text" value="Well this sorta interesting")
+    label(for="")  This section has had a ".info" class applied to it.
+    input(type="text" value="Hey you!")
     span.status
 
   section.form-group.warning
-    label(for="") Warning
-    input(type="text" value="This could be dangerous")
+    label(for="")  This section has had a ".warning" class applied to it.
+    input(type="text" value="Hmm...")
     span.status
 
 
   section.form-group.bad
-    label(for="") Bad
-    input(type="text", value="The bad touch.")
+    label(for="")  This section has had a ".bad" class applied to it.
+    input(type="text", value="Oh noes!")
     span.status
 
   section.form-group.disabled
-    label(for="") Disabled
+    label(for="")  This section has had a ".disabled" class applied to it.
     input(type="text" value="Oh noes! This is disabled!", disabled)
     span.status
