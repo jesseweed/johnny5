@@ -1606,18 +1606,6 @@ em {
 .icon-IcoMoon:before {
   content: "\e7c2"; }
 
-/* @import 'config'; */
-/*
-
-- - - JOHNNY FIVE CONFIGURATION SETTINGS - - -
-
-Note: Assume it's safe to use any valid css value for all settings unless otherwise noted.
-
-TO-DO:
-* Labels currently only align top or left
-* Find a way to not require .form-group wrapper to use icons
-
-*/
 /* BASE */
 /* COLOR */
 /* base */
@@ -1658,7 +1646,7 @@ TO-DO:
         opacity: 0.5; }
     .form-group input:disabled, .form-group textarea:disabled {
       background-color: #dcdcdc;
-      border-color: background(#dcdcdc, 10%);
+      border-color: #c3c3c3;
       color: #a3a3a3; }
     .form-group input:disabled:hover, .form-group textarea:disabled:hover {
       cursor: not-allowed; }
@@ -1681,7 +1669,7 @@ TO-DO:
     cursor: not-allowed; }
   .form-group.disabled input, .form-group.disabled textarea {
     background-color: #dcdcdc;
-    border-color: background(#dcdcdc, 10%);
+    border-color: #c3c3c3;
     color: #a3a3a3; }
   .form-group.disabled label {
     color: #dcdcdc; }
