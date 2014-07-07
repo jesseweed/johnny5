@@ -1,0 +1,58 @@
+/* FILE: [j5-base-dir]_modules/_input.scss */
+
+input, textarea {
+
+  @include input;
+
+  @if $j5-use-form-icons == true {
+    &.bad, &:invalid { @include status-input( $j5-status-bad ); }
+    &.good { @include status-input( $j5-status-good ); }
+    &.info { @include status-input( $j5-status-info ); }
+    &.warning { @include status-input( $j5-status-warning ); }
+  }
+
+  &.disabled {
+
+    &:hover {
+      cursor: not-allowed;
+    }
+
+    input, textarea {
+      background-color: $j5-status-disabled-bg;
+      border-color: $j5-input-border-color-disabled;
+      color: $j5-status-disabled-text;
+    }
+
+    label { color: $j5-status-disabled; }
+
+    @if $j5-use-form-icons == true {
+      .form-icon:before {
+        content: $j5-icon-disabled;
+        color: $j5-status-disabled-text;
+        opacity: 1;
+      }
+    }
+
+  }
+
+  // SPECIAL INPUT TYPES
+
+  @if $j5-use-functional-icons == true {
+    &[type="color"] ~ .form-icon { @include form-icon($j5-color-icon, $j5-icon-color); }
+    &[type="date"] ~ .form-icon { @include form-icon($j5-color-icon, $j5-icon-date); }
+    &[type="email"] ~ .form-icon { @include form-icon($j5-color-icon, $j5-icon-email); }
+    &[type="number"] ~ .form-icon { @include form-icon($j5-color-icon, $j5-icon-number); }
+    &[type="search"] ~ .form-icon { @include form-icon($j5-color-icon, $j5-icon-search); }
+    &[type="tel"] ~ .form-icon { @include form-icon($j5-color-icon, $j5-icon-tel); }
+    &[type="text"] ~ .form-icon { @include form-icon($j5-color-icon, $j5-icon-text); }
+    &[type="url"] ~ .form-icon { @include form-icon($j5-color-icon, $j5-icon-url); }
+  }
+
+}
+
+
+// PLACEHOLDER TEXT
+::-webkit-input-placeholder { color: $j5-color-placeholder;}
+:-moz-placeholder { color: $j5-color-placeholder;}
+::-moz-placeholder { color: $j5-color-placeholder;}
+:-ms-input-placeholder { color: $j5-color-placeholder;}

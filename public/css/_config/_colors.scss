@@ -1,0 +1,19 @@
+/* COLOR */
+
+/* base */
+$j5-color-text: #555;
+$j5-color-focus: #b02fc4;
+$j5-color-placeholder: #d5d5d5;
+$j5-color-label: #333;
+$j5-color-border: #777;
+$j5-color-divider: rgba(0,0,0,0.1);
+$j5-color-icon: $j5-color-text;
+
+/* status */
+$j5_status_bad: #c00;
+$j5-status-info: #1f7baf;
+$j5-status-good: #8fbd14;
+$j5-status-warning: #cd8200;
+$j5-status-disabled: #dcdcdc;
+$j5-status-disabled-bg: $j5-status-disabled;
+$j5-status-disabled-text: lighten( invert($j5-status-disabled-bg), 50% );

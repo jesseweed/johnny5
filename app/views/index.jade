@@ -2,44 +2,89 @@ extends layouts/default
 
 block content
 
-  section.form-group
-    input(type="text" placeholder="input with placeholder text & no label")
-    span.status
+
+  h1 Input Types
 
   section.form-group
-    label(for="") Here's an input with a label & a defaul value
-    input(type="text" value="input with default value")
-    span.status
+    label(for="") Hello, I am a label
+    input(type="text" value="I'm an input with a default value")
+    span.form-icon
 
   section.form-group
-    label(for="") This input has no value or placeholder
-    input(type="text")
-    span.status
+    input(type="text" placeholder="I'm an input with placeholder text")
+    span.form-icon
 
+  section.form-group.email
+    label(for="") Email address
+    input(type="email", value="email@example.com")
+    span.form-icon
+
+  section.form-group.tel
+    label(for="") Phone Number
+    input(type="tel", placeholder="867-5309")
+    span.form-icon.tel
+
+  section.form-group.color
+    label(for="") Select Color
+    input(type="text", placeholder="867-5309")
+    span.form-icon
+
+  section.form-group.number
+    label(for="") number
+    input(type="number", placeholder="number")
+    span.form-icon
+
+  section.form-group.search
+    label(for="") search
+    input(type="search", placeholder="search")
+    span.form-icon
+
+  section.form-group.url
+    label(for="") url
+    input(type="url", placeholder="url")
+    span.form-icon
+
+  section.form-group.date
+    label(for="") date
+    input(type="date", placeholder="date")
+    span.form-icon
+
+
+  //- &.color { @include form-icon($j5-color-icon, $j5-icon-color); }
+  //- &.date { @include form-icon($j5-color-icon, $j5-icon-date); }
+  //- &.email { @include form-icon($j5-color-icon, $j5-icon-email); }
+  //- &.number { @include form-icon($j5-color-icon, $j5-icon-number); }
+  //- &.search { @include form-icon($j5-color-icon, $j5-icon-search); }
+  //- &.tel { @include form-icon($j5-color-icon, $j5-icon-tel); }
+  //- &.url { @include form-icon($j5-color-icon, $j5-icon-url); }
+
+
+  hr.form-section
+
+  h1 Status Types
 
   section.form-group.good
     label(for="") This section has had a ".good" class applied to it.
     input(type="text" value="Woo hoo!")
-    span.status
-
+    span.form-icon
 
   section.form-group.info
     label(for="")  This section has had a ".info" class applied to it.
     input(type="text" value="Hey you!")
-    span.status
+    span.form-icon
 
   section.form-group.warning
     label(for="")  This section has had a ".warning" class applied to it.
     input(type="text" value="Hmm...")
-    span.status
+    span.form-icon
 
 
   section.form-group.bad
     label(for="")  This section has had a ".bad" class applied to it.
     input(type="text", value="Oh noes!")
-    span.status
+    span.form-icon
 
   section.form-group.disabled
     label(for="")  This section has had a ".disabled" class applied to it.
     input(type="text" value="Oh noes! This is disabled!", disabled)
-    span.status
+    span.form-icon

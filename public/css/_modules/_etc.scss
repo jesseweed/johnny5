@@ -1,0 +1,27 @@
+/* FILE: [j5-base-dir]_modules/_etc.scss */
+
+
+label {
+
+  @include label;
+
+  &.bad, &:invalid { @include status-label( $j5-status-bad ); }
+  &.good { @include status-label( $j5-status-good ); }
+  &.info { @include status-label( $j5-status-info ); }
+  &.warning { @include status-label( $j5-status-warning ); }
+
+
+  &.disabled {
+    color: $j5-status-disabled;
+    cursor: pointer;
+  }
+
+}
+
+
+
+hr.form-section {
+  border: none;
+  border-bottom: solid 1px $j5-color-divider;
+  margin: $j5-divider-margin;
+}

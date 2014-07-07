@@ -1,0 +1,29 @@
+/* FILE: [j5-base-dir]_functional/_mixins.scss */
+
+@import '_functional/mixins/status';
+@import '_functional/mixins/input';
+@import '_functional/mixins/label';
+
+
+@mixin icon {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &:before {
+    content: "";
+    font-size: $j5-icon-size;
+    margin-left: $j5-icon-left;
+    position: relative;
+    top: $j5-icon-top;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+}

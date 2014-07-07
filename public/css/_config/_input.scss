@@ -1,0 +1,23 @@
+/* INPUT */
+
+/* base */
+$j5-input-width: 100%;
+$j5-input-padding: $j5-font-size-input;
+$j5-input-top: 0px;
+$j5-input-bottom: 10px;
+
+
+/* textarea */
+$j5-textarea-height: 200px;
+$j5-textarea-resizeable: true;
+$j5-textarea-width: $j5-input-width;
+$j5-textarea-top: $j5-input-top;
+$j5-textarea-bottom: $j5-input-bottom;
+$j5-textarea-padding: $j5-input-padding;
+
+/* border */
+$j5-input-border-color: $j5-color-border;
+$j5-input-border-color-focus: $j5-color-focus;
+$j5-input-border-color-disabled: darken($j5-status-disabled, 10%);
+$j5-input-border-style: solid;
+$j5-input-border-size: 2px;

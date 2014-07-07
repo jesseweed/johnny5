@@ -1,0 +1,62 @@
+/* FILE: [j5-base-dir]_modules/_input.scss */
+
+.form-group {
+
+  /* INPUT */
+  input, textarea {
+    @include input;
+  }
+
+  /* LABEL */
+  label {
+    @include label;
+  }
+
+
+  /* ICONS */
+  &.bad { @include status($j5-status-bad, $j5-icon-bad); } // BAD / ERROR
+  &.good { @include status($j5-status-good, $j5-icon-good); } // GOOD / SUCCESS
+  &.info { @include status($j5-status-info, $j5-icon-info); } // INFO
+  &.warning { @include status($j5-status-warning, $j5-icon-warning); } // WARNING
+
+
+  @if $j5-use-functional-icons == true {
+    &.color .form-icon { @include form-icon($j5-color-icon, $j5-icon-color); }
+    &.date .form-icon { @include form-icon($j5-color-icon, $j5-icon-date); }
+    &.email .form-icon { @include form-icon($j5-color-icon, $j5-icon-email); }
+    &.number .form-icon { @include form-icon($j5-color-icon, $j5-icon-number); }
+    &.search .form-icon { @include form-icon($j5-color-icon, $j5-icon-search); }
+    &.tel .form-icon { @include form-icon($j5-color-icon, $j5-icon-tel); }
+    &.url .form-icon { @include form-icon($j5-color-icon, $j5-icon-url); }
+  }
+
+
+
+  // DISABLED
+  &.disabled {
+
+    &:hover {
+      /* cursor: not-allowed; */
+    }
+
+    input, textarea {
+      background-color: $j5-status-disabled-bg;
+      border-color: $j5-input-border-color-disabled;
+      color: $j5-status-disabled-text;
+      cursor: not-allowed;
+    }
+
+    label {
+      color: $j5-status-disabled;
+    }
+
+    .form-icon:before {
+      content: $j5-icon-disabled;
+      color: $j5-status-disabled-text;
+      opacity: 1;
+      cursor: not-allowed;
+    }
+
+  }
+
+}

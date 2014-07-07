@@ -1,0 +1,46 @@
+// STATUS FOR FORM GROUPS
+@mixin status($color, $icon:'') {
+
+  input, textarea {
+    border-color: $color;
+    color: $color;
+  }
+
+  label { color: $color; }
+
+  @if $icon != '' and $j5-use-form-icons == true {
+    .form-icon:before {
+      content: $icon;
+      color: $color;
+      opacity: 1;
+    }
+  }
+}
+
+
+// STATUS FOR INPUTS
+@mixin status-input($color) {
+  border-color: $color;
+  color: $color;
+}
+
+//STATUS FOR LABELS
+@mixin status-label($color) {
+  color: $color;
+}
+
+
+// STATUS ICONS
+@mixin form-icon($color, $icon) {
+
+  color: $color;
+
+  @if $icon != false and $icon != '' {
+    &:before {
+      content: $icon;
+      color: $color;
+      opacity: 1;
+    }
+  }
+
+}

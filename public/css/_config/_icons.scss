@@ -1,0 +1,58 @@
+/* ICON */
+$j5-use-form-icons: true; // Use icon font for status icons
+$j5-use-functional-icons: true;
+
+/* sizing */
+$j5-icon-size: $j5-font-size-input * 1.2;
+$j5-icon-left: - ($j5-input-padding + $j5-input-padding) * 1.2;
+$j5-icon-top: 2px;
+
+// SOURCES
+
+// STATUS
+$j5-icon-bad: "\e84a";
+$j5-icon-disabled: "\e845";
+$j5-icon-good: "\e6fe";
+$j5-icon-focus: "\e818";
+$j5-icon-info: "\e846";
+$j5-icon-processing: "";
+$j5-icon-required: "";
+$j5-icon-selected: "";
+$j5-icon-warning: "\e84a";
+
+// FUNCTIONAL
+
+$j5-icon-color: "\e7f4";
+$j5-icon-date: "\e64e";
+$j5-icon-email: "\e7c8";
+$j5-icon-number: "\e63a";
+$j5-icon-search: "\e7e7";
+$j5-icon-tel: "\e7c3";
+$j5-icon-text: false;
+$j5-icon-url: "\e6c3";
+
+
+
+
+
+/*
+
+ICONS:
+good
+bad
+info
+warning
+selected/typing
+disabled
+
+required
+email
+date
+tel
+search
+url
+number
+color
+
+
+*/

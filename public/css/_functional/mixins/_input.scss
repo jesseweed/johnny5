@@ -1,0 +1,47 @@
+// INPUTS
+@mixin input() {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: $j5-input-border-style $j5-input-border-size $j5-input-border-color;
+  color: $j5-color-text;
+  display: inline-block;
+  font-size: $j5-font-size-input;
+  margin-bottom: $j5-input-bottom;
+  margin-top: $j5-input-top;
+  padding: $j5-input-padding;
+  width: $j5-input-width;
+  transition: all 0.5s ease;
+
+  &:focus {
+    border-color: $j5-input-border-color-focus;
+    color: $j5-color-focus;
+
+    label { color: $j5-status-bad; }
+
+    &+ .form-icon:before {
+      content: $j5-icon-focus;
+      color: $j5-color-focus;
+      opacity: 0.5;
+    }
+
+  }
+
+  /* disabled */
+  &:disabled {
+    background-color: $j5-status-disabled-bg;
+    border-color: $j5-input-border-color-disabled;
+    color: $j5-status-disabled-text;
+  }
+
+  &:disabled:hover {
+    cursor: not-allowed;
+  }
+
+
+  @if $j5-label-position == right {
+  } @else if $j5-label-position == left {
+  } @else {
+  }
+
+}
